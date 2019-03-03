@@ -8,13 +8,17 @@ app.use(bodyParser.urlencoded({extended: false, limit: '10000mb'}));
 app.use(bodyParser.json({limit: '10000mb'}));
 app.use(cors());
 
+
 app.post('/echo', (req, res) => {
 	let body = {
 		body: req.body,
 		headers: req.headers
 		}
 	
+	var currentDate = new Date();
+	console.log(currentDate);
 	console.log('Request: ' + JSON.stringify(req.body, null, 4));
+	
 	console.log('Response: ' + JSON.stringify(body, null, 4));
 	res.json(body)
 });
