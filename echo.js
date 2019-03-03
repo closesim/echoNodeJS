@@ -14,8 +14,8 @@ app.post('/echo', (req, res) => {
 		headers: req.headers
 		}
 	
-	console.log('Request: ' + JSON.stringify(req.body));
-	console.log('Response: ' + JSON.stringify(body));
+	console.log('Request: ' + JSON.stringify(req.body, null, 4));
+	console.log('Response: ' + JSON.stringify(body, null, 4));
 	res.json(body)
 });
 
