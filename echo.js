@@ -23,4 +23,11 @@ app.post('/echo', (req, res) => {
 	res.json(body)
 });
 
+app.post('/trueecho', (req, res) => {
+	var currentDate = new Date();
+	console.log(currentDate);
+	console.log('Response: ' + JSON.stringify(req.body, null, 4));
+	res.json(req.body)
+});
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
